@@ -20,21 +20,6 @@ Aplikacja na Samsung Galaxy A55 do liczenia kobiet i mężczyzn.
   Działa też z zablokowanym telefonem w kieszeni. Bardzo słaba wibracja: 1 stuknięcie = kobieta, 2 = mężczyzna.
   Siłę ustawia się w `Feedback.kt` (`STRENGTH`).
 
-## Jak zbudować APK (bez instalowania niczego na komputerze)
-1. Załóż na github.com nowe repozytorium (najlepiej **prywatne**), np. `LicznikKM`.
-2. Wgraj do niego cały ten folder, np. poleceniami:
-   ```
-   cd C:\Users\adszm\LicznikKM
-   git init
-   git add .
-   git commit -m "Licznik K/M"
-   git branch -M main
-   git remote add origin https://github.com/TWOJA_NAZWA/LicznikKM.git
-   git push -u origin main
-   ```
-3. GitHub sam zbuduje aplikację w zakładce **Actions**, co zajmuje około 5 minut.
-4. Gotowy plik **LicznikKM.apk** znajdziesz w zakładce **Releases** repozytorium.
-
 ## Instalacja na telefonie
 1. Na telefonie otwórz stronę repozytorium, przejdź do **Releases** i pobierz `LicznikKM.apk`.
 2. Otwórz pobrany plik i zgódź się na „Instalowanie nieznanych aplikacji” dla przeglądarki lub aplikacji Moje pliki.
