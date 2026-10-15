@@ -18,7 +18,7 @@ Aplikacja na Samsung Galaxy A55 do liczenia kobiet i mężczyzn.
 - Aktualne liczby zapisują się automatycznie po każdym kliknięciu, więc nie znikną po zamknięciu aplikacji ani po restarcie telefonu.
 - **Liczenie przyciskami głośności** (przełącznik): głośniej = kobieta +1, ciszej = mężczyzna +1.
   Działa też z zablokowanym telefonem w kieszeni. Bardzo słaba wibracja: krótkie stuknięcie = kobieta, dłuższa wibracja = mężczyzna.
-  Siłę ustawia się w `Feedback.kt` (`STRENGTH`).
+  Siłę ustawia się w `Feedback.kt` (`WOMAN_STRENGTH`, `MAN_STRENGTH`).
 
 ## Instalacja na telefonie
 1. Na telefonie otwórz stronę repozytorium, przejdź do **Releases** i pobierz `LicznikKM.apk`.

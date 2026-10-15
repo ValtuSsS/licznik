@@ -13,14 +13,15 @@ import android.widget.Toast
  * Wibracja nie blokuje wątku – system wykonuje ją w tle.
  */
 object Feedback {
-    // Siła 1–255. Jeśli wibracja będzie za słaba / za mocna, zmień tylko tę liczbę.
-    private const val STRENGTH = 50
+    // Siła 1–255. Jeśli wibracja będzie za słaba / za mocna, zmień tylko te liczby.
+    private const val WOMAN_STRENGTH = 50
+    private const val MAN_STRENGTH = 130
 
     // Czasy w ms: [przerwa, wibracja]
     private val womanTimings = longArrayOf(0, 15)
-    private val womanAmplitudes = intArrayOf(0, STRENGTH)
+    private val womanAmplitudes = intArrayOf(0, WOMAN_STRENGTH)
     private val manTimings = longArrayOf(0, 80)
-    private val manAmplitudes = intArrayOf(0, STRENGTH)
+    private val manAmplitudes = intArrayOf(0, MAN_STRENGTH)
 
     fun woman(context: Context) = vibrate(context, womanTimings, womanAmplitudes)
 
