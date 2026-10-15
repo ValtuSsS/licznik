@@ -5,8 +5,9 @@ on:
     branches: [ main, master ]
   workflow_dispatch:
 
+# Domyślnie tylko odczyt. Zapis (Releases) ma wyłącznie job "release" poniżej.
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   build:
@@ -38,12 +39,25 @@ jobs:
           name: LicznikKM-apk
           path: LicznikKM.apk
 
-      # APK pojawia się w zakładce "Releases" – można go pobrać prosto na telefon.
+  # APK pojawia się w zakładce "Releases" – można go pobrać prosto na telefon.
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Pobierz zbudowany APK
+        uses: actions/download-artifact@v4
+        with:
+          name: LicznikKM-apk
+
       - name: Opublikuj w Releases
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh release create "build-${{ github.run_number }}" LicznikKM.apk \
+            --repo "${{ github.repository }}" \
+            --target "${{ github.sha }}" \
             --title "Licznik K/M – wersja ${{ github.run_number }}" \
             --notes "Pobierz plik LicznikKM.apk na telefon i zainstaluj." \
             --latest
