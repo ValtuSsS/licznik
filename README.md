@@ -17,7 +17,7 @@ Aplikacja na Samsung Galaxy A55 do liczenia kobiet i mężczyzn.
   ```
 - Aktualne liczby zapisują się automatycznie po każdym kliknięciu, więc nie znikną po zamknięciu aplikacji ani po restarcie telefonu.
 - **Liczenie przyciskami głośności** (przełącznik): głośniej = kobieta +1, ciszej = mężczyzna +1.
-  Działa też z zablokowanym telefonem w kieszeni. Bardzo słaba wibracja: 1 stuknięcie = kobieta, 2 = mężczyzna.
+  Działa też z zablokowanym telefonem w kieszeni. Bardzo słaba wibracja: krótkie stuknięcie = kobieta, dłuższa wibracja = mężczyzna.
   Siłę ustawia się w `Feedback.kt` (`STRENGTH`).
 
 ## Instalacja na telefonie

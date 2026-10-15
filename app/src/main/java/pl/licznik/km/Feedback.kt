@@ -9,18 +9,18 @@ import android.widget.Toast
 
 /**
  * Bardzo słaba, krótka wibracja po naciśnięciu przycisku głośności – żeby w kieszeni
- * czuć, że policzono. Kobieta = 1 stuknięcie, mężczyzna = 2 stuknięcia.
+ * czuć, że policzono. Kobieta = krótkie stuknięcie, mężczyzna = jedna dłuższa wibracja.
  * Wibracja nie blokuje wątku – system wykonuje ją w tle.
  */
 object Feedback {
     // Siła 1–255. Jeśli wibracja będzie za słaba / za mocna, zmień tylko tę liczbę.
     private const val STRENGTH = 50
 
-    // Czasy w ms: [przerwa, wibracja, przerwa, wibracja ...]
+    // Czasy w ms: [przerwa, wibracja]
     private val womanTimings = longArrayOf(0, 15)
     private val womanAmplitudes = intArrayOf(0, STRENGTH)
-    private val manTimings = longArrayOf(0, 15, 50, 15)
-    private val manAmplitudes = intArrayOf(0, STRENGTH, 0, STRENGTH)
+    private val manTimings = longArrayOf(0, 80)
+    private val manAmplitudes = intArrayOf(0, STRENGTH)
 
     fun woman(context: Context) = vibrate(context, womanTimings, womanAmplitudes)
 
